@@ -41,12 +41,12 @@
 }
 
 
-.prev {   
+.up {   
     top: 20px;
     left: 50%;
 }
 
-.next {
+.down {
     bottom: 20px;
     left: 50%;
 }

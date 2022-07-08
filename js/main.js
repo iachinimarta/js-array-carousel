@@ -6,6 +6,7 @@ const imgContainerDom = document.querySelector('.img-container');
 
 // Imposto un ciclo per scorrere tra le imgs
 for (let i = 0; i < imageList.length; i++) {
+
     // Dentro img-container vado a inserire il div contenente le img da stampare e al posto di src metto il nome che ho dato all array così è dinamico
     imgContainerDom.innerHTML += `<div class="images"> <img class="img" src="${imageList[i]}"> </div>`;
 
@@ -19,3 +20,31 @@ let imgContainerElements = document.getElementsByClassName('images');
 
 // Aggiungo all'elemento in posizione 0 contenuto in img-container la classe "show" che lo renderà visibile
 imgContainerElements[imgShow].classList.add('show');
+
+// Richiamo il pulsante 'up' dall'html
+const btnUp = document.querySelector('.up');
+
+// Aggiungo un event listener al pulsante 'up' in modo tale da poterci associare un'azione
+btnUp.addEventListener('click',
+    function () {
+        // Vado all'elemento in posizione 0 e rimuovo la classe "show"
+        imgContainerElements[imgShow].classList.remove('show');
+
+        // Incremento il valore (la posizione) di imgShow (quindi dell'img che dovrà essere visibile)
+        imgShow++;
+
+        // Aggiungo nuovamente la classe "show" all'elemento incrementato di 1
+        imgContainerElements[imgShow].classList.add('show');
+    }
+);
+
+// Faccio lo stesso procedimento per il pulsante 'down'
+const btnDown = document.querySelector('.down');
+
+btnDown.addEventListener('click',
+    function () {
+        imgContainerElements[imgShow].classList.remove('show');
+        imgShow--;
+        imgContainerElements[imgShow].classList.add('show');
+    }
+)
