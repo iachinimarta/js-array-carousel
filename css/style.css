@@ -20,6 +20,7 @@
     width: 50vw;
     height: 50vh;
     position: relative;
+    display: none;
 }
 
 .img {
@@ -48,4 +49,12 @@
 .next {
     bottom: 20px;
     left: 50%;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
