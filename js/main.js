@@ -47,4 +47,4 @@ btnDown.addEventListener('click',
         imgShow--;
         imgContainerElements[imgShow].classList.add('show');
     }
-)
+);
