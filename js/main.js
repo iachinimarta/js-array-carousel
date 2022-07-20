@@ -41,6 +41,7 @@ btnUp.addEventListener('click',
 
         // Aggiungo nuovamente la classe "show" all'elemento incrementato di 1
         imagesList[active].classList.add('show');
+        thumbList[active].classList.add('active');
 
         //Nel momento in cui avanziamo con le slide il pulsante per andare indietro deve ricomparire
         btnDown.classList.remove('hidden');
@@ -58,8 +59,10 @@ btnUp.addEventListener('click',
 btnDown.addEventListener('click',
     function () {
         imagesList[active].classList.remove('show');
+        thumbList[active].classList.remove('active');
         active--;
         imagesList[active].classList.add('show');
+        thumbList[active].classList.add('active');
 
         //Quando torno indietro dall ultima slide il pulsante UP deve ricomparire
         btnUp.classList.remove('hidden');

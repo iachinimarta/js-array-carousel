@@ -71,10 +71,12 @@
 .thumbs-container {
     width: 20%;
     height: 100%;
+    background-color: black;
 }
 
 .thumb {
     height: calc(100% / 5);
+    opacity: 0.5;
 }
 
 .thumb img {
@@ -83,6 +85,7 @@
     object-fit: cover;
 }
 
-.thumbs.active {
-    background-color: white;
+.thumb.active {
+    opacity: 1;
+    border: solid 3px white;
 }
