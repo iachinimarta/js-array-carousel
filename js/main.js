@@ -36,20 +36,23 @@ btnUp.addEventListener('click',
         imagesList[active].classList.remove('show');
         thumbList[active].classList.remove('active');
 
-        // Incremento il valore (la posizione) di active (quindi dell'img che dovrà essere visibile)
-        active++;
+        if (active == imageList.length - 1) {
+            active = 0
+        } else {
+            active++;
+        }
 
         // Aggiungo nuovamente la classe "show" all'elemento incrementato di 1
         imagesList[active].classList.add('show');
         thumbList[active].classList.add('active');
 
-        //Nel momento in cui avanziamo con le slide il pulsante per andare indietro deve ricomparire
-        btnDown.classList.remove('hidden');
+        // //Nel momento in cui avanziamo con le slide il pulsante per andare indietro deve ricomparire
+        // btnDown.classList.remove('hidden');
 
-        //Se arriviamo all ultima slide il pulsante per andare avanti deve scomparire
-        if (active == imagesList.length - 1) {
-            btnUp.classList.add('hidden');
-        }
+        // //Se arriviamo all ultima slide il pulsante per andare avanti deve scomparire
+        // if (active == imagesList.length - 1) {
+        //     btnUp.classList.add('hidden');
+        // }
     }
 );
 
@@ -60,16 +63,22 @@ btnDown.addEventListener('click',
     function () {
         imagesList[active].classList.remove('show');
         thumbList[active].classList.remove('active');
-        active--;
+        
+        if (active == 0) {
+            active = imageList.length - 1;
+        } else {
+            active--;
+        }
+
         imagesList[active].classList.add('show');
         thumbList[active].classList.add('active');
 
-        //Quando torno indietro dall ultima slide il pulsante UP deve ricomparire
-        btnUp.classList.remove('hidden');
+        // //Quando torno indietro dall ultima slide il pulsante UP deve ricomparire
+        // btnUp.classList.remove('hidden');
 
-        //Quando siamo tornati alla prima slide il pulsante DOWN deve scomparire di nuovo
-        if (active == 0) {
-            btnDown.classList.add('hidden');
-        }
+        // //Quando siamo tornati alla prima slide il pulsante DOWN deve scomparire di nuovo
+        // if (active == 0) {
+        //     btnDown.classList.add('hidden');
+        // }
     }
 );
